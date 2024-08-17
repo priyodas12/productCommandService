@@ -27,5 +27,8 @@ optimizing performance, scalability, and security.
 - AWS account with SQS and appropriate permissions
 - PostgreSQL docker instance
 
+```
+docker run --name product-command-db -e POSTGRES_USER=<username> -e POSTGRES_PASSWORD=<password> -e POSTGRES_DB=pgdb -e POSTGRES_MAX_CONNECTIONS=100 -p 5434:5432 -d postgres
 
-
+docker run --name product-query-db -e POSTGRES_USER=<username> -e POSTGRES_PASSWORD=<password> -e POSTGRES_DB=pgdb -e POSTGRES_MAX_CONNECTIONS=1000 -p 5435:5432 -d postgres
+```
